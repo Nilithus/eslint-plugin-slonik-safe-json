@@ -1,0 +1,42 @@
+{
+  "name": "eslint-plugin-slonik-safe-json",
+  "version": "1.0.0",
+  "description": "ESLint rule for enforcing sloniks sql.json() function instead of JSON.stringify in sql templated strings",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "slonik",
+    "rule"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "rules/"
+  ],
+  "scripts": {
+    "test": "node tests/test-no-json-stringify.js"
+  },
+  "author": {
+    "email": "byro@fastmail.fm",
+    "name": "Byron Nagi"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "slonik": ">=23.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Nilithus/eslint-plugin-slonik-safe-json.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nilithus/eslint-plugin-slonik-safe-json/issues"
+  },
+  "homepage": "https://github.com/Nilithus/eslint-plugin-slonik-safe-jsons#readme"
+}
