@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-slonik-safe-json",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "ESLint rule for enforcing sloniks sql.json() function instead of JSON.stringify in sql templated strings",
   "keywords": [
     "eslint",

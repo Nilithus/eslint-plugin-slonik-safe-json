@@ -11,9 +11,8 @@ module.exports = {
     },
     create: function(context) {
         return {
-            'TaggedTemplateExpression[tag.name="sql"] CallExpression': function(node) {
+            'TaggedTemplateExpression[tag.name="sql"] CallExpression[callee.object.name="JSON"]': function(node) {
                 if (
-                    node.callee.object.name === 'JSON' &&
                     node.callee.property.name === 'stringify'
                 ) {
                     context.report({ node, messageId: 'unexpected'})

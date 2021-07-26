@@ -1,4 +1,4 @@
-const rules = require('../../rules/no-json-stringify');
+const rule = require('../rules/no-json-stringify');
 const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester({
@@ -9,9 +9,7 @@ const ruleTester = new RuleTester({
 
 const errors = [{messageId: 'unexpected'}];
 
-const slonikJsonRule = rules['slonik-safe-json-serialization'];
-
-ruleTester.run('slonik-safe-json-serialization', slonikJsonRule, {
+ruleTester.run('slonik-safe-json-serialization', rule, {
     valid: [
         "sql`SELECT * FROM FOO`",
         {
@@ -19,6 +17,9 @@ ruleTester.run('slonik-safe-json-serialization', slonikJsonRule, {
         },
         {
             code: 'sql`SELECT * FROM FOO WHERE id=${sql.json({})}`',
+        },
+        {
+            code: 'sql`(${uuidv4()}, upper(${t}))`',
         }
     ],
     invalid: [
